@@ -1,0 +1,61 @@
+// dodanie dyrektywy preprocesora
+// instrukcja d
+#include <iostream>
+
+// funkcja main - tylko jedna na program
+
+
+
+void WysIntro()
+{
+
+
+	// Wstep do Gry
+	   /* Wyświetlanie w kolejnej linii można wykonać przy użyciu:
+	   - endl z przestrzeni nazw std
+	   - poprzez dodanie \n
+	   */
+	std::cout << "Jestes tajnym agentem, ktory wlamuje sie do strzezonej serwerowni";
+	std::cout << std::endl;
+	std::cout << "Musisz podac wlasciwe haslo, zeby przejsc dalej...";
+	std::cout << std::endl;
+
+};
+
+
+int main()
+{
+	WysIntro();
+	
+	int KodA = 2;
+	int KodB = 3;
+	int KodC = 4;
+
+	int StrzalaA;
+	int StrzalaB;
+	int StrzalaC;
+	
+	std::cin >> StrzalaA;
+	std::cin >> StrzalaB;
+	std::cin >> StrzalaC;
+	
+	std::cout << " Podano " << StrzalaA << StrzalaB << StrzalaC << std::endl;
+	
+	int Starla = StrzalaA + StrzalaB + StrzalaC;
+	int Starlli =  StrzalaA + StrzalaB + StrzalaC;
+
+	int Kodsuma = KodA + KodB + KodC;
+
+	if (true) {
+		std::cout << "Wygrane" << std::endl;
+
+
+
+	};
+	
+	std::cout << "Wygrane" << std::endl;
+
+
+
+	return 0;
+}
