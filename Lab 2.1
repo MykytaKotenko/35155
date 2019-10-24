@@ -57,3 +57,85 @@ int main()
 
 	 return 0;
 };
+
+
+
+
+
+
+Lab2.3
+
+#include <iostream>
+#include <locale.h>
+#include <conio.h>
+
+
+void UruchomGre()
+{
+
+    std::cout << "Jestes tajnym agentem, ktory wlamuje sie do strzezonej serwerowni";
+    std::cout << std::endl;
+    std::cout << "Musisz podac wlasciwe haslo, zeby przejsc dalej..." << std::endl;
+
+
+
+
+    const int KodA = 4;
+    const int KodB = 3;
+    const int KodC = 2;
+
+    const int KodSuma = KodA + KodB + KodC;
+
+    const int KodIloczyn = KodA * KodB * KodC;
+
+    std::cout << std::endl;
+    std::cout << "+ W kodzie znajduja sie trzy zmienne" << std::endl;
+    std::cout << "+ Sumuja sie do: " << KodSuma << std::endl;
+    std::cout << "+ Mnoza sie do: " << KodIloczyn << std::endl;
+
+
+    int StrzalA, StrzalB, StrzalC;
+
+
+    std::cin >> StrzalA;
+    std::cin >> StrzalB;
+    std::cin >> StrzalC;
+
+    int StrzalSuma = StrzalA + StrzalB + StrzalC;
+    int Strzalloczyn = StrzalA * StrzalB * StrzalC;
+
+
+	 if (StrzalSuma == KodSuma && Strzalloczyn == KodIloczyn)
+	 {
+       std::cout << "Zwyciestwo!" << std::endl;
+	   _getch();
+   }
+   else
+   {
+       std::cout << "Przegrana ;(" << std::endl;
+   }
+
+
+}
+
+
+int main()
+{
+
+	while (true)
+	bool bUkonczoneGre = Gra();
+	std::cin.clear();
+	std::cin.ignore();
+
+	if (bUkonczonoGre)
+	{
+		++Poziomtrudnosci;
+
+	}
+
+
+
+
+	 return 0;
+}
+
