@@ -1,0 +1,86 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+unsigned int PodajRozmiarTab()
+{
+	unsigned int Rozmiar;
+
+	std::cout << "Podaj rozmiar tablicy : " << endl;
+	std::cin >> Rozmiar;
+	while (Rozmiar <= 0)
+	{
+		std::cin.clear();
+		std::cin.ignore();
+
+		std::cout << "Bledny rozmiar, podaj rozmiar jeszcze raz!\n";
+		std::cin >> Rozmiar;
+	}
+
+	return Rozmiar;
+}
+void Wartosc(int* tabl, size_t size)
+{
+	for (size_t i{ 0 }; i < size; ++i)
+	{
+		cout << "[Poprosze zapisac liczbe do tabeli] ";
+		cin >> *(tabl + i);
+	}
+}
+
+void Wyswietl(size_t size, const int* const wyn)
+{
+	for (size_t i{ 0 }; i < size; ++i) {
+		cout << wyn[i] << endl;
+	}
+}
+
+int* UtworzTab(size_t rozmiar)
+{
+	int* tab{ nullptr };
+	tab = new int[rozmiar];
+
+	Wartosc(tab, rozmiar);
+	return tab;
+}
+
+int* Tablica_wynnik(int* Tab1, int* Tab2, size_t size1, size_t size2, size_t size3)
+{
+	int* wynnik{ nullptr };
+	wynnik = new int[size3];
+	int y = 0;
+	for (size_t i{ 0 }; i < size1; i++) {
+		for (size_t j{ 0 }; j < size2; j++) {
+			*(wynnik + y) = *(Tab1 + i) * (*(Tab2 + j));
+			y++;
+		}
+	}
+	return wynnik;
+}
+
+void Wynnik()
+{
+	int* Tabl1{ nullptr };
+	int* Tabl2{ nullptr };
+	int* wynnik{ nullptr };
+	size_t size1;
+	size_t size2;
+
+	size1 = PodajRozmiarTab();
+	Tabl1 = UtworzTab(size1);
+	cout << "\n";
+	size2 = PodajRozmiarTab();
+	Tabl2 = UtworzTab(size2);
+
+	size_t size3 = size1 * size2;
+	wynnik = Tablica_wynnik(Tabl1, Tabl2, size1, size2, size3);
+	Wyswietl(size3, wynnik);
+}
+int main()
+{
+	Wynnik();
+
+	return 0;
+}
